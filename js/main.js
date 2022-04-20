@@ -1,6 +1,8 @@
 let localStoragePag = {
   theme: false,
-  cartElement: 0
+  cartElement: 0,
+  totalItem: 0,
+  totalPrice: 0.01
 }
 
 //loader
@@ -129,16 +131,6 @@ for(let i = 0; i < btnFilterLink.length; i++){
   })
 }
 
-
-
-
-
-
-
-
-
-
-
 //const uwu = document.getElementById('uwu')
 let prroducts = ``
 
@@ -160,6 +152,7 @@ function pushCart(numProduct){
         </div>
       </div>
     </div>`
+  localStoragePag.totalPrice += productsInfo[numProduct].priceU
 }
 
 let btnAddCart = document.querySelectorAll("#add-cart")
@@ -167,15 +160,74 @@ let btnAddCart = document.querySelectorAll("#add-cart")
 for(let i = 0; i < btnAddCart.length; i++){
   btnAddCart[i].addEventListener('click', () => {
     localStoragePag.cartElement = 1
+    localStoragePag.totalItem++
     let dataProduct = btnAddCart[i].dataset.option
     pushCart(dataProduct)
-    console.log(prroducts)
   })
 }
 
+const totalItems = document.getElementById('total-items')
+const totalPrice = document.getElementById('total-price')
+
 function dibujar(){
   cartNoEmpty.innerHTML = prroducts
+  totalItems.innerText = `${localStoragePag.totalItem} items`
+  totalPrice.innerText = `$${localStoragePag.totalPrice}`
 }
+
+
+
+//total a pagar
+
+
+//checkout
+const checkout = document.getElementById('finish-shop')
+
+checkout.addEventListener('click', () => {
+  alert("Compra realizada, se cobrara un extra el 30% del pago total para ser donardo a mi bolsillo")
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
