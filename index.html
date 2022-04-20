@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daffy Store</title>
+    <link rel="icon" href="./assets/logo.png" />
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body id="body">
+    <!-----------Loader---------->
+    <div id="loader">
+      <img src="./assets/loader/loader6.gif" alt="Loader" />
+      <h2>Daffy Store</h2>
+    </div>
+    <!---------Barra Navegacion---------->
+    <nav id="nav">
+      <div class="nav-container center">
+        <a class="logo" href="#Home"><img id="logo" src="./assets/logo.png" alt="Logo" />STORE</a>
+        <div class="menu-links">
+          <button class="btn-close" id="close-menu-links"><i class="bx bx-x-circle"></i></button>
+          <ul>
+            <li><a class="btn-nav active" href="#Home">HOME</a></li>
+            <li><a class="btn-nav" href="#Products">PRODUCTS</a></li>
+          </ul>
+        </div>
+        <section class="menu-nav-icon">
+          <i class="bx bx-moon" id="theme"></i>
+          <i class="bx bx-shopping-bag" id="open-cart"></i>
+          <i class="bx bx-grid-alt" id="open-menu-links"></i>
+        </section>
+      </div>
+      <div class="menu-cart">
+        <button id="close-menu-cart" class="btn-close"><i class="bx bx-x-circle"></i></button>
+        <h3>My cart</h3>
+        <div class="menu-cart-content">
+          <section class="cart-empty">
+            <img src="./assets/empty-cart.png" alt="IMG-carro vacio" />
+            <h3>Your cart is empty</h3>
+            <p>You can add items to your cart by clicking on the "+" button on the product page.</p>
+          </section>
+          <section class="cart-no-empty">
+          </section>
+        </div>
+        <section class="total-cart">
+          <div>
+            <h2>$0.00</h2>
+            <span>0 items</span>
+          </div>
+          <button id="finish-shop">"Checkout"</button>
+        </section>
+      </div>
+    </nav>
+    <!---------Header---------->
+    <header id="Home" class="center">
+      <section class="header-img">
+        <img src="./assets/polera.png" alt="Polera" />
+      </section>
+      <section class="header-text">
+        <h1>New Sweatshirt <br/>COLLECTIONS 2022</h1>
+        <p>Latest arrival of the new Hanes Midweight Crewneck sweatshirt imported from the 2022 series, with a modern design.</p>
+        <span>$14.00</span>
+        <div class="header-text-btn">
+          <a href="#Home">Discover</a>
+          <button>ADD TO CART</button>
+        </div>
+      </section>
+    </header>
+    <!---------Main---------->
+    <main class="center" id="Products">
+      <ul>
+        <li class="btn-filter-products active2" id="all-products">
+          <h3>Show All</h3>
+          <span>show all products</span>
+        </li>
+        <li class="btn-filter-products" id="clothing">
+          <h3>Clothing</h3>
+          <span>3 products</span>
+        </li>
+        <li class="btn-filter-products" id="accessories">
+          <h3>Accessories</h3>
+          <span>4 products</span>
+        </li>
+        <li class="btn-filter-products" id="objects">
+          <h3>Objects</h3>
+          <span>2 products</span>
+        </li>
+      </ul>
+      <section class="products-buy">
+        <div id="Clothing">
+          <div class="product-img">
+            <img src="./assets/polera.png" alt="Producto" />
+          </div>
+          <div class="product-info">
+            <h2>$14.00<span>Stock: 10</span></h2>
+            <p>Hoddies</p>
+          </div>
+          <button data-option="Product1" id="add-cart"><i class="bx bx-plus"></i></button>
+        </div>
+        <div id="Clothing">
+          <div class="product-img">
+            <img src="./assets/polera2.png" alt="Producto" />
+          </div>
+          <div class="product-info">
+            <h2>$15.00<span>Stock: 20</span></h2>
+            <p>Hoddies</p>
+          </div>
+          <button data-option="Product2" id="add-cart"><i class="bx bx-plus"></i></button>
+        </div>
+        <div id="Clothing">
+          <div class="product-img">
+            <img src="./assets/polera3.png" alt="Producto" />
+          </div>
+          <div class="product-info">
+            <h2>$18.00<span>Stock: 5</span></h2>
+            <p>Hoddies</p>
+          </div>
+          <button data-option="Product3" id="add-cart"><i class="bx bx-plus"></i></button>
+        </div>
+        <div id="Accessories">
+          <div class="product-img">
+            <img src="./assets/banda2.png" alt="Producto" />
+          </div>
+          <div class="product-info">
+            <h2>$8.00<span>Stock: 35</span></h2>
+            <p>Cap</p>
+          </div>
+          <button data-option="Product4" id="add-cart"><i class="bx bx-plus"></i></button>
+        </div>
+        <div id="Accessories">
+          <div class="product-img">
+            <img src="./assets/banda.png" alt="Producto" />
+          </div>
+          <div class="product-info">
+            <h2>$5.00<span>Stock: 15</span></h2>
+            <p>Bandana</p>
+          </div>
+          <button data-option="Product5" id="add-cart"><i class="bx bx-plus"></i></button>
+        </div>
+        <div id="Accessories">
+          <div class="product-img">
+            <img src="./assets/banda3.png" alt="Producto" />
+          </div>
+          <div class="product-info">
+            <h2>$3.00<span>Stock: 20</span></h2>
+            <p>Ring</p>
+          </div>
+          <button data-option="Product6" id="add-cart"><i class="bx bx-plus"></i></button>
+        </div>
+        <div id="Accessories">
+          <div class="product-img">
+            <img src="./assets/banda4.png" alt="Producto" />
+          </div>
+          <div class="product-info">
+            <h2>$2.50<span>Stock: 15</span></h2>
+            <p>Bracelet</p>
+          </div>
+          <button data-option="Product7" id="add-cart"><i class="bx bx-plus"></i></button>
+        </div>
+        <div id="Objects">
+          <div class="product-img">
+            <img src="./assets/taza.png" alt="Producto" />
+          </div>
+          <div  class="product-info">
+            <h2>$1.00<span>Stock: 20</span></h2>
+            <p>Bowl</p>
+          </div>
+          <button data-option="Product8" id="add-cart"><i class="bx bx-plus"></i></button>
+        </div>
+        <div id="Objects">
+          <div class="product-img">
+            <img src="./assets/taza2.png" alt="Producto" />
+          </div>
+          <div class="product-info">
+            <h2>$39.99<span>Stock: 5</span></h2>
+            <p>Airpods Uchiha</p>
+          </div>
+          <button data-option="Product9" id="add-cart"><i class="bx bx-plus"></i></button>
+        </div>
+      </section>
+    </main>
+    <!---------Footer--------->
+    <footer>
+      <section class="footer-info center">
+        <div>
+          <h3>Our information</h3>
+          <ul>
+            <li>Arequipa - Peru</li>
+          </ul>
+        </div>
+        <div>
+          <h3>About Us</h3>
+          <ul>
+            <li><a href="#Home">Support Center</a></li>
+            <li><a href="#Home">Customer Support</a></li>
+            <li><a href="#Home">About Us</a></li>
+            <li><a href="#Home">Copy Right</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Product</h3>
+          <ul>
+            <li><a href="#Home">Hoodies</a></li>
+            <li><a href="#Home">Shirts</a></li>
+            <li><a href="#Home">Sweatshirts</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Social</h3>
+          <ul>
+            <li><a href="#Home"><i class="bx bxl-facebook"></i></a></li>
+            <li><a href="#Home"><i class="bx bxl-twitter"></i></a></li>
+            <li><a href="#Home"><i class="bx bxl-instagram"></i></a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="footer center">
+        <h5>© ACADEMLO. All rigths reserved</h5>
+      </section>
+    </footer>
+  </body>
+  <script src="./js/products-info.js"></script>
+  <script src="./js/main.js"></script>
+</html>
