@@ -74,6 +74,7 @@ btnOpenCart.addEventListener("click", () => {
     cartEmpty.style.display = "none"
     cartNoEmpty.style.display = "flex"
   }
+  dibujar()
   openAndCloseNav(menuCart, "0")
 });
 btnCloseCart.addEventListener("click", () => {openAndCloseNav(menuCart, "-100%")});
@@ -137,6 +138,111 @@ for(let i = 0; i < btnFilterLink.length; i++){
 
 
 
+
+//const uwu = document.getElementById('uwu')
+let prroducts = ``
+
+function pushCart(numProduct){
+  prroducts += `
+    <div class="cart-element-select">
+      <div class="cart-element-img">
+        <img src=${productsInfo[numProduct].src} alt="Producto">
+      </div>
+      <div class="cart-element-info">
+        <h2>${productsInfo[numProduct].name}</h2>
+        <p>Stock: ${productsInfo[numProduct].stock} <span>$${productsInfo[numProduct].priceU}</span></p>
+        <span>Subtotal: $${productsInfo[numProduct].priceU}</span>
+        <div class="cart-element-buttons">
+          <button id="btn-menos">-</button>
+          <span>${productsInfo[numProduct].cantidad} unidad</span>
+          <button id="btn-mas">+</button>
+          <i class='bx bx-trash-alt'></i>
+        </div>
+      </div>
+    </div>`
+}
+
+let btnAddCart = document.querySelectorAll("#add-cart")
+
+for(let i = 0; i < btnAddCart.length; i++){
+  btnAddCart[i].addEventListener('click', () => {
+    localStoragePag.cartElement = 1
+    let dataProduct = btnAddCart[i].dataset.option
+    pushCart(dataProduct)
+    console.log(prroducts)
+  })
+}
+
+function dibujar(){
+  cartNoEmpty.innerHTML = prroducts
+}
+
+
+
+
+
+
+
+
+
+/*
+let btnAddCart = document.querySelectorAll("#add-cart")
+//detect click button add-cart
+/*
+
+for(let i = 0; i < btnAddCart.length; i++){
+  btnAddCart[i].addEventListener('click', () => {
+    localStoragePag.cartElement = 1
+    let dataProduct = btnAddCart[i].dataset.option
+    pushCart(dataProduct)
+  })
+}
+*/
+
+/*
+
+
+
+
+function mostrarPokemones() {  
+  for(let i = 0; i < btnAddCart.length; i++){
+    btnAddCart[i].addEventListener('click', () => {
+      localStoragePag.cartElement = 1
+      let dataProduct = btnAddCart[i].dataset.option
+      pushCart(dataProduct)
+    })
+  }
+    cartMenu.innerHTML = prroducts
+    console.log(prroducts)
+}
+
+
+
+
+
+btnAddCart.addEventListener('click', () => {
+  mostrarPokemones()
+})
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 //aumentar unidad del producto 
   const btnUnidadMas = document.getElementById('btn-mas')
   const btnUnidadMenos = document.getElementById('btn-menos')
@@ -144,7 +250,7 @@ for(let i = 0; i < btnFilterLink.length; i++){
   /*
   btnUnidadMas.addEventListener('click', () => {
     productsInfo.cantidad += 1
-  })*/
+  })
   
 
 //push cart element select
@@ -180,4 +286,4 @@ for(let i = 0; i < btnAddCart.length; i++){
     let dataProduct = btnAddCart[i].dataset.option
     pushCart(dataProduct)
   })
-}
+} */
