@@ -51,21 +51,22 @@ html{
   font-size: 1.5rem;
   background-color: inherit;
   color: var(--title-color);
+  cursor: pointer;
 }
 .modal{
-  width: 40%;
-  height: 40vh;
   position: fixed;
   top: 30vh;
-  left: 30%;
+  left: calc(100% - 360px);
   background-color: var(--resalt-color);
   display: none;flex-direction: column;justify-content: center;align-items: center;gap: 20px;
   border-radius: 20px;
-  opacity: 0;
-  transition: .4s;
+  z-index: 100;
+  text-align: center;
+  padding: 30px 10px;
+  max-width: 350px;
 }
 .modal img{
-  width: 200px;
+  width: 150px;
 }
 .modal h2{
   color: var(--title-color);
@@ -190,6 +191,9 @@ nav {
 }
 .cart-element-select{
   display: flex;
+  background-color: var(--card-color2);
+  padding: 10px;
+  border-radius: 5px;
 }
 .cart-element-img {
   margin: 20px 20px;
@@ -443,6 +447,10 @@ footer {
   .center {
     max-width: 720px;
   }
+  .modal{
+    left: calc(100% - 400px);
+    padding: 50px 40px;
+  }
   /*Nav*/
   nav {
     height: 80px;
@@ -544,6 +552,9 @@ footer {
   .center {
     max-width: 1024px;
     margin: auto;
+  }
+  .modal{
+    left: calc(100% - 380px);
   }
   ::-webkit-scrollbar {
     width: 10px;

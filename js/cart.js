@@ -39,12 +39,12 @@ function ready(){
 function buyButtonClick(){
   if(localStoragePag.cartFull){
     var modal = document.getElementById('si-compra')
+    var btnModalSi = document.getElementById('close-modal-si')
     localStoragePag.cartElement = 0
     modal.style.display = "flex"
-    modal.style.opacity = "1"
-    setTimeout(() => {
+    btnModalSi.addEventListener('click', () => {
       modal.style.display = "none"
-    },5000)
+    })
     var cartContent = document.getElementsByClassName('cart-no-empty')[0]
     while( cartContent.hasChildNodes()){
         cartContent.removeChild(cartContent.firstChild)
@@ -52,11 +52,12 @@ function buyButtonClick(){
   }
   else{
     var modalNo = document.getElementById('no-compra')
+    var btnModalNo = document.getElementById('close-modal-no')
     modalNo.style.display = "flex"
     modalNo.style.opacity = "1"
-    setTimeout(() => {
+    btnModalNo.addEventListener('click', () => {
       modalNo.style.display = "none"
-    },5000)
+    })
   }
   updateTotal()
 }
