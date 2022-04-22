@@ -383,6 +383,13 @@ main ul span {
   background-color: var(--resalt-color);
   color: var(--body-color);
 }
+#descuento{
+  width: 50px;
+  height: 50px;
+  position: relative;
+  bottom: 80px;
+  left: 20px;
+}
 
 /*Footer*/
 footer {
