@@ -1,8 +1,9 @@
+//local storage
 let localStoragePag = {
   theme: false,
   cartElement: 0,
   totalItem: 0,
-  totalPrice: 0.01
+  totalPrice: 0.00
 }
 
 //loader
@@ -69,21 +70,20 @@ const cartEmpty = document.getElementsByClassName("cart-empty")[0]
 const cartNoEmpty = document.getElementsByClassName("cart-no-empty")[0]
 
 btnOpenCart.addEventListener("click", () => {
-  if(localStoragePag.cartElement === 0){
+  /*if(localStoragePag.cartElement === 0){
     cartEmpty.style.display = "flex"
     cartNoEmpty.style.display = "none"
   }else{
     cartEmpty.style.display = "none"
     cartNoEmpty.style.display = "flex"
-  }
-  dibujar()
+  }*/
   openAndCloseNav(menuCart, "0")
 });
 btnCloseCart.addEventListener("click", () => {openAndCloseNav(menuCart, "-100%")});
 
 //menu background
 const nav = document.querySelector("#nav");
-
+  
 window.addEventListener("scroll", () => {
   if (window.pageYOffset > 150) {
     nav.className = "nav-scroll";
@@ -130,212 +130,3 @@ for(let i = 0; i < btnFilterLink.length; i++){
     this.className += " active2"
   })
 }
-
-//const uwu = document.getElementById('uwu')
-let prroducts = ``
-
-function pushCart(numProduct){
-  prroducts += `
-    <div class="cart-element-select">
-      <div class="cart-element-img">
-        <img src=${productsInfo[numProduct].src} alt="Producto">
-      </div>
-      <div class="cart-element-info">
-        <h2>${productsInfo[numProduct].name}</h2>
-        <p>Stock: ${productsInfo[numProduct].stock} <span>$${productsInfo[numProduct].priceU}</span></p>
-        <span>Subtotal: $${productsInfo[numProduct].priceU}</span>
-        <div class="cart-element-buttons">
-          <button id="btn-menos">-</button>
-          <span>${productsInfo[numProduct].cantidad} unidad</span>
-          <button id="btn-mas">+</button>
-          <i class='bx bx-trash-alt'></i>
-        </div>
-      </div>
-    </div>`
-  localStoragePag.totalPrice += productsInfo[numProduct].priceU
-}
-
-let btnAddCart = document.querySelectorAll("#add-cart")
-
-for(let i = 0; i < btnAddCart.length; i++){
-  btnAddCart[i].addEventListener('click', () => {
-    localStoragePag.cartElement = 1
-    localStoragePag.totalItem++
-    let dataProduct = btnAddCart[i].dataset.option
-    pushCart(dataProduct)
-  })
-}
-
-const totalItems = document.getElementById('total-items')
-const totalPrice = document.getElementById('total-price')
-
-function dibujar(){
-  cartNoEmpty.innerHTML = prroducts
-  totalItems.innerText = `${localStoragePag.totalItem} items`
-  totalPrice.innerText = `$${localStoragePag.totalPrice}`
-}
-
-
-
-//total a pagar
-
-
-//checkout
-const checkout = document.getElementById('finish-shop')
-
-checkout.addEventListener('click', () => {
-  alert("Compra realizada, se cobrara un extra el 30% del pago total para ser donardo a mi bolsillo")
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-let btnAddCart = document.querySelectorAll("#add-cart")
-//detect click button add-cart
-/*
-
-for(let i = 0; i < btnAddCart.length; i++){
-  btnAddCart[i].addEventListener('click', () => {
-    localStoragePag.cartElement = 1
-    let dataProduct = btnAddCart[i].dataset.option
-    pushCart(dataProduct)
-  })
-}
-*/
-
-/*
-
-
-
-
-function mostrarPokemones() {  
-  for(let i = 0; i < btnAddCart.length; i++){
-    btnAddCart[i].addEventListener('click', () => {
-      localStoragePag.cartElement = 1
-      let dataProduct = btnAddCart[i].dataset.option
-      pushCart(dataProduct)
-    })
-  }
-    cartMenu.innerHTML = prroducts
-    console.log(prroducts)
-}
-
-
-
-
-
-btnAddCart.addEventListener('click', () => {
-  mostrarPokemones()
-})
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-//aumentar unidad del producto 
-  const btnUnidadMas = document.getElementById('btn-mas')
-  const btnUnidadMenos = document.getElementById('btn-menos')
-
-  /*
-  btnUnidadMas.addEventListener('click', () => {
-    productsInfo.cantidad += 1
-  })
-  
-
-//push cart element select
-const cartMenu = document.getElementsByClassName('cart-no-empty')[0]
-
-function pushCart(numProduct){
-  cartMenu.innerHTML = `
-    <div class="cart-element-select">
-      <div class="cart-element-img">
-        <img src=${productsInfo[numProduct].src} alt="Producto">
-      </div>
-      <div class="cart-element-info">
-        <h2>${productsInfo[numProduct].name}</h2>
-        <p>Stock: ${productsInfo[numProduct].stock} <span>$${productsInfo[numProduct].priceU}</span></p>
-        <span>Subtotal: $${productsInfo[numProduct].priceU}</span>
-        <div class="cart-element-buttons">
-          <button id="btn-menos">-</button>
-          <span>${productsInfo[numProduct].cantidad} unidad</span>
-          <button id="btn-mas">+</button>
-          <i class='bx bx-trash-alt'></i>
-        </div>
-      </div>
-    </div>`
-}
-
-
-//detect click button add-cart
-let btnAddCart = document.querySelectorAll("#add-cart")
-
-for(let i = 0; i < btnAddCart.length; i++){
-  btnAddCart[i].addEventListener('click', () => {
-    localStoragePag.cartElement = 1
-    let dataProduct = btnAddCart[i].dataset.option
-    pushCart(dataProduct)
-  })
-} */
