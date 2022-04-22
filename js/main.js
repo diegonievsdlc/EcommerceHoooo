@@ -2,8 +2,6 @@
 let localStoragePag = {
   theme: false,
   cartElement: 0,
-  totalItem: 0,
-  totalPrice: 0.00
 }
 
 //loader
@@ -70,13 +68,14 @@ const cartEmpty = document.getElementsByClassName("cart-empty")[0]
 const cartNoEmpty = document.getElementsByClassName("cart-no-empty")[0]
 
 btnOpenCart.addEventListener("click", () => {
-  /*if(localStoragePag.cartElement === 0){
+  if(localStoragePag.cartElement === 0){
     cartEmpty.style.display = "flex"
     cartNoEmpty.style.display = "none"
   }else{
     cartEmpty.style.display = "none"
     cartNoEmpty.style.display = "flex"
-  }*/
+  }
+  
   openAndCloseNav(menuCart, "0")
 });
 btnCloseCart.addEventListener("click", () => {openAndCloseNav(menuCart, "-100%")});
