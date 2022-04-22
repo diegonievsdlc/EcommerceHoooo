@@ -52,6 +52,24 @@ html{
   background-color: inherit;
   color: var(--title-color);
 }
+.modal{
+  width: 40%;
+  height: 40vh;
+  position: fixed;
+  top: 30vh;
+  left: 30%;
+  background-color: var(--resalt-color);
+  display: none;flex-direction: column;justify-content: center;align-items: center;gap: 20px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: .4s;
+}
+.modal img{
+  width: 200px;
+}
+.modal h2{
+  color: var(--title-color);
+}
 
 /*Lader*/
 #loader {
@@ -382,13 +400,6 @@ main ul span {
 #add-cart:hover {
   background-color: var(--resalt-color);
   color: var(--body-color);
-}
-#descuento{
-  width: 50px;
-  height: 50px;
-  position: relative;
-  bottom: 80px;
-  left: 20px;
 }
 
 /*Footer*/

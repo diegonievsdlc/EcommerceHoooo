@@ -38,15 +38,25 @@ function ready(){
 //Buy button
 function buyButtonClick(){
   if(localStoragePag.cartFull){
+    var modal = document.getElementById('si-compra')
     localStoragePag.cartElement = 0
-    alert('Compra realizada con exito')
+    modal.style.display = "flex"
+    modal.style.opacity = "1"
+    setTimeout(() => {
+      modal.style.display = "none"
+    },5000)
     var cartContent = document.getElementsByClassName('cart-no-empty')[0]
     while( cartContent.hasChildNodes()){
         cartContent.removeChild(cartContent.firstChild)
     }
   }
   else{
-    alert("Tu cartera esta vacia")
+    var modalNo = document.getElementById('no-compra')
+    modalNo.style.display = "flex"
+    modalNo.style.opacity = "1"
+    setTimeout(() => {
+      modalNo.style.display = "none"
+    },5000)
   }
   updateTotal()
 }
