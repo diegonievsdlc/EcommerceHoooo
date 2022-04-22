@@ -37,11 +37,16 @@ function ready(){
 
 //Buy button
 function buyButtonClick(){
-  localStoragePag.cartElement = 0
-  alert('Your Orde is placed')
-  var cartContent = document.getElementsByClassName('cart-no-empty')[0]
-  while( cartContent.hasChildNodes()){
-      cartContent.removeChild(cartContent.firstChild)
+  if(localStoragePag.cartFull){
+    localStoragePag.cartElement = 0
+    alert('Compra realizada con exito')
+    var cartContent = document.getElementsByClassName('cart-no-empty')[0]
+    while( cartContent.hasChildNodes()){
+        cartContent.removeChild(cartContent.firstChild)
+    }
+  }
+  else{
+    alert("Tu cartera esta vacia")
   }
   updateTotal()
 }
@@ -49,6 +54,7 @@ function buyButtonClick(){
 //Remove items from cart
 function removeCartItems(event){
   localStoragePag.cartElement--
+  menuCartDibuja()
   var buttonCliked = event.target
   buttonCliked.parentElement.remove()
   updateTotal()
@@ -70,6 +76,7 @@ function addCartClicked(event){
   var shopProducts = button.parentElement
   var title = shopProducts.getElementsByClassName('product-title2')[0].innerText
   addProductToCart(dataButton, title)
+  menuCartDibuja()
   updateTotal()
 }
 
